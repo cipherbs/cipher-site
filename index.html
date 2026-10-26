@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CIPHER — Tecnologia que converte</title>
+<meta name="description" content="CIPHER: sites, landing pages, tráfego pago, e-commerce, criativos e automações.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--fg:#f4f4f2;--mut:#8a8d93;--line:rgba(255,255,255,.08);--card:rgba(255,255,255,.03);--acc:#c8d1ff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,nav,footer{position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.serif{font-family:"Instrument Serif",serif;font-weight:400;font-style:italic}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;backdrop-filter:blur(14px);background:rgba(7,8,10,.45);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:.28em;font-size:14px}
+.brand svg{width:22px;height:22px}
+nav ul{display:flex;gap:32px;list-style:none;font-size:14px;color:var(--mut)}
+nav ul a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;background:var(--fg);color:#000;font-weight:500;font-size:14px;transition:transform .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(200,209,255,.25)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:60px}
+.eyebrow{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--mut);margin-bottom:24px}
+h1{font-size:clamp(44px,8vw,112px);line-height:.95;font-weight:400;letter-spacing:-.035em;max-width:11ch}
+.hero p{margin-top:28px;max-width:46ch;color:var(--mut);font-size:18px;line-height:1.6}
+.cta{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+section{padding:140px 0}
+h2{font-size:clamp(36px,5vw,68px);line-height:1;font-weight:400;letter-spacing:-.03em;max-width:16ch}
+.lead{color:var(--mut);font-size:18px;max-width:52ch;line-height:1.6;margin-top:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:72px}
+.card{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card);backdrop-filter:blur(10px);transition:transform .6s cubic-bezier(.2,.8,.2,1),border-color .4s;transform-style:preserve-3d}
+.card:hover{border-color:rgba(255,255,255,.22)}
+.card .img{aspect-ratio:4/3;overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) contrast(1.05);transition:transform 1.2s cubic-bezier(.2,.8,.2,1),filter .6s}
+.card:hover img{transform:scale(1.07);filter:none}
+.card .b{padding:26px}
+.card .n{font-size:12px;color:var(--mut);letter-spacing:.2em}
+.card h3{font-size:24px;font-weight:400;margin:10px 0 8px;letter-spacing:-.01em}
+.card p{color:var(--mut);font-size:15px;line-height:1.55}
+.card.wide{grid-column:span 2}
+.card.wide .img{aspect-ratio:16/7}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:80px}
+.stats div{padding:40px 24px;border-right:1px solid var(--line)}
+.stats div:last-child{border:0}
+.stats b{display:block;font-size:clamp(36px,4vw,56px);font-weight:400;letter-spacing:-.03em}
+.stats span{color:var(--mut);font-size:14px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px}
+.step{padding:28px;border-top:1px solid rgba(255,255,255,.25)}
+.step i{font-style:normal;color:var(--acc);font-size:13px;letter-spacing:.2em}
+.step h4{font-size:22px;font-weight:400;margin:14px 0 10px}
+.step p{color:var(--mut);font-size:15px;line-height:1.55}
+.final{text-align:center;padding:200px 0}
+.final h2{margin:0 auto;max-width:14ch}
+.final .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mut);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.8,.2,1),transform 1s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;white-space:nowrap;background:rgba(7,8,10,.5)}
+.marquee div{display:inline-block;animation:mq 30s linear infinite;font-size:22px;color:var(--mut)}
+.marquee span{margin:0 28px}.marquee em{color:var(--fg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (max-width:900px){
+ nav ul{display:none} nav{padding:16px}
+ .grid,.steps{grid-template-columns:1fr}.card.wide{grid-column:auto}.card.wide .img{aspect-ratio:4/3}
+ .stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}.stats div{border-bottom:1px solid var(--line)}
+ section{padding:96px 0}
+}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}.marquee div{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+
+<nav>
+  <a class="brand" href="#"><svg viewBox="0 0 100 100" fill="currentColor"><g id="mk"></g></svg>CIPHER</a>
+  <ul><li><a href="#servicos">Serviços</a></li><li><a href="#processo">Processo</a></li><li><a href="#resultados">Resultados</a></li></ul>
+  <a class="btn" href="https://wa.me/5516994320087" target="_blank" rel="noopener">Fale conosco</a>
+</nav>
+
+<main>
+  <header class="hero wrap">
+    <div class="eyebrow">CIPHER — Tecnologia & Performance</div>
+    <h1>Decifrando o <span class="serif">crescimento</span> do seu negócio.</h1>
+    <p>Sites, e-commerce, tráfego pago, criativos e automações — construídos como um único sistema, desenhado para converter.</p>
+    <div class="cta"><a class="btn" href="#contato">Começar um projeto →</a><a class="btn ghost" href="#servicos">Ver serviços</a></div>
+  </header>
+
+  <div class="marquee"><div>
+    <span>Sites</span><span><em>✦</em></span><span>Landing Pages</span><span><em>✦</em></span><span>Tráfego Pago</span><span><em>✦</em></span><span>E-commerce</span><span><em>✦</em></span><span>Criativos</span><span><em>✦</em></span><span>Automações</span><span><em>✦</em></span><span>IA</span><span><em>✦</em></span>
+    <span>Sites</span><span><em>✦</em></span><span>Landing Pages</span><span><em>✦</em></span><span>Tráfego Pago</span><span><em>✦</em></span><span>E-commerce</span><span><em>✦</em></span><span>Criativos</span><span><em>✦</em></span><span>Automações</span><span><em>✦</em></span><span>IA</span><span><em>✦</em></span>
+  </div></div>
+
+  <section id="servicos"><div class="wrap">
+    <div class="eyebrow rv">O que fazemos</div>
+    <h2 class="rv">Tudo que sua marca precisa, <span class="serif">em uma só engrenagem.</span></h2>
+    <p class="lead rv">Cada peça foi pensada para trabalhar junto: tecnologia, mídia e criação girando no mesmo eixo.</p>
+    <div class="grid">
+      <article class="card wide rv"><div class="img"><img loading="lazy" src="img/sites.png" alt="Desenvolvimento de sites"></div><div class="b"><div class="n">01</div><h3>Sites institucionais</h3><p>Sites rápidos, elegantes e otimizados para SEO, com experiências 3D e animações sob medida.</p></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" style="object-position:top" src="img/landing.png" alt="Landing pages"></div><div class="b"><div class="n">02</div><h3>Landing pages</h3><p>Páginas de alta conversão, testadas e ajustadas para cada campanha.</p></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=70&auto=format" alt="Tráfego pago"></div><div class="b"><div class="n">03</div><h3>Tráfego pago</h3><p>Meta, Google e TikTok Ads com gestão orientada a dados e ROAS.</p></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=70&auto=format" alt="E-commerce"></div><div class="b"><div class="n">04</div><h3>E-commerce</h3><p>Lojas completas, integradas a pagamentos, estoque e logística.</p></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=70&auto=format" alt="Criativos e imagens"></div><div class="b"><div class="n">05</div><h3>Criativos & imagens</h3><p>Peças, vídeos e imagens com IA que param o scroll e vendem.</p></div></article>
+      <article class="card wide rv"><div class="img"><img loading="lazy" src="img/automacoes.png" alt="Automações"></div><div class="b"><div class="n">06</div><h3>Automações & IA</h3><p>Fluxos de atendimento, CRM, WhatsApp e integrações que trabalham 24h por você.</p></div></article>
+    </div>
+  </div></section>
+
+  <section id="processo"><div class="wrap">
+    <div class="eyebrow rv">Processo</div>
+    <h2 class="rv">Do diagnóstico <span class="serif">à escala.</span></h2>
+    <div class="steps">
+      <div class="step rv"><i>01</i><h4>Diagnóstico</h4><p>Entendemos o negócio, o público e os números.</p></div>
+      <div class="step rv"><i>02</i><h4>Estratégia</h4><p>Desenhamos a arquitetura de canais e conversão.</p></div>
+      <div class="step rv"><i>03</i><h4>Construção</h4><p>Design, código, criativos e automações em sprints.</p></div>
+      <div class="step rv"><i>04</i><h4>Escala</h4><p>Otimização contínua guiada por dados reais.</p></div>
+    </div>
+  </div></section>
+
+  <section id="resultados"><div class="wrap">
+    <div class="eyebrow rv">Resultados</div>
+    <h2 class="rv">Números que <span class="serif">falam por nós.</span></h2>
+    <div class="stats rv">
+      <div><b data-n="120">0</b><span>projetos entregues</span></div>
+      <div><b data-n="4.8" data-s="x">0</b><span>ROAS médio</span></div>
+      <div><b data-n="98" data-s="%">0</b><span>clientes satisfeitos</span></div>
+      <div><b data-n="24" data-s="/7">0</b><span>automações ativas</span></div>
+    </div>
+  </div></section>
+
+  <section class="final" id="contato"><div class="wrap">
+    <div class="eyebrow rv">Vamos conversar</div>
+    <h2 class="rv">Pronto para <span class="serif">decifrar</span> o próximo nível?</h2>
+    <div class="cta rv"><a class="btn" href="https://wa.me/5516994320087?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20CIPHER%20e%20quero%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">Chamar no WhatsApp →</a><a class="btn ghost" href="mailto:cipherlift@gmail.com">Enviar e-mail</a></div>
+  </div></section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 CIPHER. Todos os direitos reservados.</span><span>Tecnologia • Performance • Criação</span></div></footer>
+
+<script>
+// Logo 2D da navbar (mesma geometria do 3D)
+(function(){
+  const g=document.getElementById('mk');let h='';
+  for(let i=0;i<12;i++){const a=i*30;h+=`<polygon transform="rotate(${a} 50 50)" points="44,6 50,6 50,26 44,26 44,20 38,14 42,10 44,12" />`;}
+  g.innerHTML=h;
+})();
+// Revelar ao rolar + contadores
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+function count(el){const t=+el.dataset.n,s=el.dataset.s||'',d=t%1?1:0,t0=performance.now();
+  (function f(n){const p=Math.min((n-t0)/1600,1),e=1-Math.pow(1-p,3);el.textContent=(t*e).toFixed(d)+s;if(p<1)requestAnimationFrame(f)})(t0)}
+// Tilt suave nos cards
+document.querySelectorAll('.card').forEach(c=>{
+  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(900px) rotateY(${x*6}deg) rotateX(${-y*6}deg)`});
+  c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+</script>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const canvas=document.getElementById('gl');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});
+renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+const scene=new THREE.Scene();
+const pmrem=new THREE.PMREMGenerator(renderer);
+scene.environment=pmrem.fromScene(new RoomEnvironment(),.04).texture;
+const camera=new THREE.PerspectiveCamera(35,1,.1,100);camera.position.set(0,0,14);
+
+// Peça do símbolo: barra radial + braço diagonal (forma de "V" pela metade)
+const s=new THREE.Shape();
+[[-.6,4.4],[0,4.4],[0,2.4],[-.6,2.4],[-.6,3.0],[-1.2,3.6],[-.8,4.0],[-.6,3.8]].forEach((p,i)=>i?s.lineTo(p[0],p[1]):s.moveTo(p[0],p[1]));
+const geo=new THREE.ExtrudeGeometry(s,{depth:.5,bevelEnabled:true,bevelSize:.04,bevelThickness:.05,bevelSegments:3});
+geo.translate(0,0,-.25);
+const mat=new THREE.MeshPhysicalMaterial({color:0xf2f2f0,metalness:.9,roughness:.22,clearcoat:1,clearcoatRoughness:.15});
+const logo=new THREE.Group();scene.add(logo);
+const pieces=[];
+for(let i=0;i<12;i++){
+  const pivot=new THREE.Group();pivot.rotation.z=-i*Math.PI/6;
+  const m=new THREE.Mesh(geo,mat);pivot.add(m);logo.add(pivot);
+  pieces.push({m,seed:Math.random()*Math.PI*2});
+}
+const key=new THREE.DirectionalLight(0xc8d1ff,2.2);key.position.set(5,6,8);scene.add(key);
+const rim=new THREE.PointLight(0x7f8cff,30,30);rim.position.set(-6,-3,4);scene.add(rim);
+
+// Partículas leves
+const N=900,pg=new THREE.BufferGeometry(),pos=new Float32Array(N*3);
+for(let i=0;i<N*3;i++)pos[i]=(Math.random()-.5)*40;
+pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+const stars=new THREE.Points(pg,new THREE.PointsMaterial({size:.035,color:0xffffff,transparent:true,opacity:.5}));scene.add(stars);
+
+function resize(){const w=innerWidth,h=innerHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+addEventListener('resize',resize);resize();
+
+let mx=0,my=0,tx=0,ty=0,sp=0,ssp=0,sv=0;
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+addEventListener('scroll',()=>{sp=scrollY/Math.max(1,document.body.scrollHeight-innerHeight)},{passive:true});
+
+const clock=new THREE.Clock();
+function frame(){
+  if(document.hidden){requestAnimationFrame(frame);return}
+  const t=clock.getElapsedTime();
+  tx+=(mx-tx)*.05;ty+=(my-ty)*.05;ssp+=(sp-ssp)*.08;
+  const mobile=innerWidth<640;
+  // Coreografia de scroll: hero à direita -> explode e gira -> reagrupa ao centro no final
+  // v = quantas telas já foram roladas (movimento contínuo e visível)
+  sv+=((scrollY/innerHeight)-sv)*.08;const v=sv;
+  const burst=Math.sin(Math.min(ssp*1.25,1)*Math.PI);
+  const side=mobile?0:3.2*Math.cos(v*Math.PI*.5);       // alterna direita/esquerda a cada seção
+  logo.position.x=side*(1-Math.max(0,(ssp-.85)*6.6));    // centraliza no final
+  logo.position.y=(mobile?1.4:.4)*Math.cos(v*1.3)-Math.sin(v*.9)*.6;
+  logo.position.z=Math.sin(v*1.1)*3;                      // aproxima e afasta
+  logo.rotation.z=t*.12+v*1.2;
+  logo.rotation.x=ty*.6+Math.sin(v*1.4)*.9;
+  logo.rotation.y=tx*.8+v*1.6;
+  const sc=(mobile?.55:.85)*(1+.2*burst);logo.scale.setScalar(sc);
+  pieces.forEach((p,i)=>{
+    p.m.position.y=burst*(1.6+Math.sin(p.seed)*.8)+Math.sin(t*1.2+i)*.05;
+    p.m.position.z=burst*Math.sin(p.seed*3)*2.5;
+    p.m.rotation.y=burst*Math.sin(p.seed)*1.2;
+  });
+  stars.rotation.y=t*.01+ssp;stars.rotation.x=ssp*.5;
+  renderer.render(scene,camera);
+  requestAnimationFrame(frame);
+}
+frame();
+</script>
+</body>
+</html>
