@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CIPHER — Tecnologia que converte</title>
 <meta name="description" content="CIPHER: sites, landing pages, tráfego pago, e-commerce, criativos e automações.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#07080a">
+<meta property="og:title" content="CIPHER — Tecnologia que converte">
+<meta property="og:description" content="Sites, landing pages, tráfego pago, e-commerce, criativos e automações.">
+<meta property="og:image" content="favicon-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -79,7 +86,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <canvas id="gl"></canvas>
 
 <nav>
-  <a class="brand" href="#"><svg viewBox="0 0 100 100" fill="currentColor"><g id="mk"></g></svg>CIPHER</a>
+  <a class="brand" href="#"><img src="favicon-32.png" srcset="favicon-512.png 4x" width="22" height="22" alt="" style="border-radius:4px">CIPHER</a>
   <ul><li><a href="#servicos">Serviços</a></li><li><a href="#processo">Processo</a></li><li><a href="#resultados">Resultados</a></li></ul>
   <a class="btn" href="https://wa.me/5516994320087" target="_blank" rel="noopener">Fale conosco</a>
 </nav>
@@ -104,9 +111,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
     <div class="grid">
       <article class="card wide rv"><div class="img"><img loading="lazy" src="img/sites.png" alt="Desenvolvimento de sites"></div><div class="b"><div class="n">01</div><h3>Sites institucionais</h3><p>Sites rápidos, elegantes e otimizados para SEO, com experiências 3D e animações sob medida.</p></div></article>
       <article class="card rv"><div class="img"><img loading="lazy" src="img/landing.png" alt="Landing pages"></div><div class="b"><div class="n">02</div><h3>Landing pages</h3><p>Páginas de alta conversão, testadas e ajustadas para cada campanha.</p></div></article>
-      <article class="card rv"><div class="img"><img loading="lazy" src="img/trafego.png" alt="Tráfego pago"></div><div class="b"><div class="n">03</div><h3>Tráfego pago</h3><p>Meta, Google e TikTok Ads com gestão orientada a dados e ROAS.</p></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="img/trafego.jpg" alt="Tráfego pago"></div><div class="b"><div class="n">03</div><h3>Tráfego pago</h3><p>Meta, Google e TikTok Ads com gestão orientada a dados e ROAS.</p></div></article>
       <article class="card rv"><div class="img"><img loading="lazy" src="img/ecommerce.png" alt="E-commerce"></div><div class="b"><div class="n">04</div><h3>E-commerce</h3><p>Lojas completas, integradas a pagamentos, estoque e logística.</p></div></article>
-      <article class="card rv"><div class="img"><img loading="lazy" src="img/criativos.png" alt="Criativos e imagens"></div><div class="b"><div class="n">05</div><h3>Criativos & imagens</h3><p>Peças, vídeos e imagens com IA que param o scroll e vendem.</p></div></article>
+      <article class="card rv"><div class="img"><img loading="lazy" src="img/criativos.jpg" alt="Criativos e imagens"></div><div class="b"><div class="n">05</div><h3>Criativos & imagens</h3><p>Peças, vídeos e imagens com IA que param o scroll e vendem.</p></div></article>
       <article class="card wide rv"><div class="img"><img loading="lazy" src="img/automacoes.png" alt="Automações"></div><div class="b"><div class="n">06</div><h3>Automações & IA</h3><p>Fluxos de atendimento, CRM, WhatsApp e integrações que trabalham 24h por você.</p></div></article>
     </div>
   </div></section>
@@ -143,12 +150,6 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <footer><div class="wrap"><span>© 2026 CIPHER. Todos os direitos reservados.</span><span>Tecnologia • Performance • Criação</span></div></footer>
 
 <script>
-// Logo 2D da navbar (mesma geometria do 3D)
-(function(){
-  const g=document.getElementById('mk');let h='';
-  for(let i=0;i<12;i++){const a=i*30;h+=`<polygon transform="rotate(${a} 50 50)" points="44,6 50,6 50,26 44,26 44,20 38,14 42,10 44,12" />`;}
-  g.innerHTML=h;
-})();
 // Revelar ao rolar + contadores
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
