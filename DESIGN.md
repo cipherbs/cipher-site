@@ -4,6 +4,8 @@ Direção: branco, cinza claro, tipografia ampla, superfícies arredondadas e la
 
 O site é estático: `index.html`, `styles.css`, `script.js`. Não requer instalação ou build. A publicação usa o repositório existente `cipherbs/cipher-site`, sem alterar o Manager ou o Forms.
 
+Revisão de 2026-11-16: `scroll.css` e `scroll.js` acrescentam movimento ligado à rolagem. A escultura e a etiqueta da abertura se deslocam em velocidades distintas, os serviços entram com atraso leve por coluna e uma linha acompanha o progresso na seção de processo. A nova seção “Tudo conectado” usa cartões empilhados e texto fixo em telas largas; em celulares, tablets e janelas baixas, o conteúdo segue o fluxo normal. Movimento reduzido desativa esses efeitos. As rotinas usam um único `requestAnimationFrame` por atualização, sem bloquear a rolagem. Verificadas as quatro larguras e a alteração da preferência por movimento reduzido com a página aberta.
+
 Animações: entradas únicas de 15 px ao rolar, inclinação de até 1,25° na abertura ao passar o mouse e inclinações menores nos cartões. Não há vídeos automáticos ou animação contínua. `prefers-reduced-motion` desliga os efeitos. As abas funcionam com clique e teclado; perguntas usam `details` nativo.
 
 Imagens otimizadas em `media/`, com os originais existentes preservados em `img/`. Imagens de demonstração não são apresentadas como resultados de clientes. O projeto Mostra Home Design já constava no site original. Não foram inventados números de desempenho ou depoimentos.
