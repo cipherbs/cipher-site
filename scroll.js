@@ -7,6 +7,7 @@
   const cards = [...document.querySelectorAll('.journey-card')];
   const steps = [...document.querySelectorAll('.process-grid li')];
   const services = [...document.querySelectorAll('.service-card')];
+  const areas = [...document.querySelectorAll('.service-area')];
   const clamp = value => Math.max(0, Math.min(1, value));
   cards.forEach((card, index) => card.style.setProperty('--card-index', index));
   let frame = 0;
@@ -20,6 +21,7 @@
     const projectRect = project.getBoundingClientRect();
     const processRect = process.getBoundingClientRect();
     const cardRects = cards.map(card => card.getBoundingClientRect());
+    const areaRects = areas.map(area => area.getBoundingClientRect());
     const heroProgress = clamp(-heroRect.top / heroRect.height);
     hero.style.setProperty('--hero-shift', `${heroProgress * (wide.matches ? 38 : 15)}px`);
     hero.style.setProperty('--hero-scale', 1 + heroProgress * .035);
@@ -34,6 +36,11 @@
       const overlap = wide.matches && following ? clamp((height * .65 - following.top) / (height * .45)) : 0;
       card.style.setProperty('--stack-scale', 1 - overlap * .035);
     });
+    areas.forEach((area, index) => {
+      const rect = areaRects[index];
+      const progress = clamp((height - rect.top) / (height + rect.height));
+      area.style.setProperty('--area-shift', `${(progress - .5) * (wide.matches ? 24 : 12)}px`);
+    });
   }
   function schedule() { if (!frame && !reduced.matches) frame = requestAnimationFrame(update); }
   function configure() {
@@ -44,6 +51,7 @@
       cancelAnimationFrame(frame); frame = 0;
       [hero, project, process].forEach(element => ['--hero-shift', '--hero-scale', '--tag-shift', '--project-shift', '--process-progress'].forEach(property => element.style.removeProperty(property)));
       cards.forEach(card => card.style.removeProperty('--stack-scale'));
+      areas.forEach(area => area.style.removeProperty('--area-shift'));
       steps.forEach(step => step.classList.remove('step-active'));
     } else schedule();
   }
